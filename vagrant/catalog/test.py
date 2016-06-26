@@ -39,6 +39,12 @@ def search_by_id(id):
         return None
 
 
+def list_of_restaurant_items(a_restaurant):
+    list_of_items = session.query(MenuItem).filter_by(
+        restaurant_id=a_restaurant.id)
+    return list_of_items
+
+
 def insert_new(name):
     a_restaurant = Restaurant(name=name)
     session.add(a_restaurant)

@@ -1,0 +1,23 @@
+<html>
+
+<body>
+{% if item %}
+  <h1>Edit Menu Item</h1>
+    <!-- INSERT YOUR CODE HERE -->
+    <form method="POST" action="{{url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=item.id)}}">
+
+      <label for="name">Name</label>
+      <input name=name type="text" placeholder="{{item.name}}" />
+
+      <label for="price">Price</label>
+      <input name="price" type="text" placeholder="{{item.price}}" />
+
+      <label for="description" type="text">Description</label>
+      <input name="description" type="text" placeholder="{{item.description}}"/>
+
+      <input type="submit" value="Submit" />
+    </form>
+{% endif %}
+</body>
+
+</html>
