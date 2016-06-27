@@ -16,8 +16,10 @@
       <input name="description" type="text" placeholder="{{item.description}}"/>
 
       <input type="submit" value="Submit" />
+
     </form>
 {% endif %}
+<a href="{{url_for('restaurantMenu', restaurant_id=restaurant_id, menu_id=item.id)}}">Cancel</a>
 </body>
 
 </html>

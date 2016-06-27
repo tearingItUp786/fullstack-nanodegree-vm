@@ -1,30 +1,29 @@
 <!doctype html>
 
 <html>
-
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" media="screen" title="no title" charset="utf-8">
+</head>
 <body>
 
     <h1>{{restaurant.name}}</h1>
 
     <a href="{{url_for('newMenuItem', restaurant_id=restaurant.id)}}">Create New Menu Item</a>
     {% for i in items %}
-
-      <div>
-
-        <p>{{i.name}}</p>
-
-        <p>{{i.description}}</p>
-
-        <p> {{i.price}} </p>
-
-      </div>
-      <div>
-        <a href="{{url_for('editMenuItem',restaurant_id=restaurant.id, menu_id=i.id)}}">Edit</a>
-      </div>
-      <div>
-        <a href="{{url_for('deleteMenuItem',restaurant_id=restaurant.id,menu_id=i.id)}}">Delete</a>
-      </div>
+    <div>
+        <ul>
+            <li>{{i.name}}</li>
+            <li>{{i.description}}</li>
+            <li>{{i.price}}</li>
+            <li>
+                <a href="{{url_for('editMenuItem',restaurant_id=restaurant.id, menu_id=i.id)}}">Edit</a>
+            </li>
+            <li>
+                <a href="{{url_for('deleteMenuItem',restaurant_id=restaurant.id,menu_id=i.id)}}">Delete</a>
+            </li>
+        </ul>
+    </div>
     {% endfor %}
-</body>
+</bod>
 
 </html>
